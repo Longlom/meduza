@@ -4,6 +4,8 @@ import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/image-gallery.css";
 import type { GalleryItem, ImageGalleryRef } from "react-image-gallery";
 
+import styles from './style.module.css';
+
 import page1 from "../../assets/menu/1.jpg";
 import page2 from "../../assets/menu/2.jpg";
 import page3 from "../../assets/menu/3.jpg";
@@ -47,7 +49,7 @@ function MenuPage() {
   return (
     <div className="app-container">
       <h1>Our Cafe Menu</h1>
-      <ul className="menu-list">
+      <ul className={styles.menuList}>
         <ImageGallery
           ref={galleryRef}
           items={images}
