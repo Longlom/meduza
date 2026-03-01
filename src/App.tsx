@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css'; // Your styles
+import MainPage from './pages/MainPage';
+import MenuPage from './pages/MenuPage';
 
-function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        HELLO FROM LONG
-      </p>
-    </>
-  )
+declare global {
+    interface Window {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        Telegram: any;
+    }
 }
 
-export default App
+
+
+function App() {
+  useEffect(() => {
+    // Initialize Telegram WebApp once at the root
+    window.Telegram.WebApp.ready();
+    window.Telegram.WebApp.expand(); // Allow full-screen mode
+  }, []);
+
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/menu" element={<MenuPage />} />
+        {/* <Route path="/page2" element={<Page2 />} /> */}
+        {/* <Route path="/page3" element={<Page3 />} /> */}
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
