@@ -1,0 +1,24 @@
+.buttonGroup {
+  background-color: rgba(39, 38, 44, 0.88);
+  backdrop-filter: blur(16px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  padding: 25px;
+
+
+  &:hover {
+    background-color: rgba(245, 239, 220, 0.08);
+  }
+}
+
+.buttonGroupLink {
+  display: block;
+  font-size: 2em;
+
+  color: var(--main-text-color);
+}
+
+.buttonGroupLink:hover {
+  color: var(--main-text-color);
+}

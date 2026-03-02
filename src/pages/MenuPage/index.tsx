@@ -48,7 +48,7 @@ function MenuPage() {
 
   return (
     <div className="app-container">
-      <h1>Our Cafe Menu</h1>
+      <h1>Menu</h1>
       <ul className={styles.menuList}>
         <ImageGallery
           ref={galleryRef}

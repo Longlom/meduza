@@ -5,6 +5,14 @@
   text-align: center;
 }
 
+body {
+  background: linear-gradient(165deg, rgb(30, 29, 31) 0%, rgb(45, 44, 49) 100%);
+  color: var( --main-text-color);
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
